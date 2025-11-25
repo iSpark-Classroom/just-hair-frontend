@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+body {
+  @apply bg-neutral-100 font-sans;
+}
+
+.tab {
+  @apply text-sm text-neutral-500 flex items-center gap-3 p-3 rounded-md active:bg-violet-100 active:text-violet-700 font-medium
+  hover:bg-violet-100 hover:text-violet-700 transition duration-400 ease-in-out;
+}
+
+.tab-icon {
+  @apply h-5 w-5;
+}
