@@ -2,6 +2,7 @@ import React from "react";
 import StylistSideBar from "./components/SideBars/StylistSideBar";
 import TopBar from "./components/TopBar/TopBar";
 import AdminSideBar from "./components/SideBars/AdminSideBar";
+import ClientSideBar from "./components/SideBars/ClientSideBar";
 
 const App = () => {
   return (

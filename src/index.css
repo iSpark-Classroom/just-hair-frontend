@@ -4,11 +4,20 @@ body {
   @apply bg-neutral-100 font-sans;
 }
 
+/* Side Bar styles */
 .tab {
-  @apply text-sm text-neutral-500 flex items-center gap-3 p-3 rounded-md active:bg-violet-100 active:text-violet-700 font-medium
+  @apply cursor-pointer w-full text-sm text-neutral-500 flex items-center gap-3 p-3 rounded-md font-medium
   hover:bg-violet-100 hover:text-violet-700 transition duration-400 ease-in-out;
+}
+
+.active-tab {
+  @apply bg-violet-100 text-violet-700;
 }
 
 .tab-icon {
   @apply h-5 w-5;
+}
+
+.hide-text {
+  display: none;
 }

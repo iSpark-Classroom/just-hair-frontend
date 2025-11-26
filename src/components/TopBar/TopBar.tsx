@@ -4,8 +4,8 @@ import profile from "/profile.jpg";
 
 const TopBar = ({ user = "Guest" }: { user: string }) => {
   return (
-    <div className="flex items-center justify-between p-6 w-full bg-white h-20 border-b border-neutral-200">
-      <div className="flex flex-col gap-1 items-start">
+    <div className="flex items-center justify-center md:justify-between p-6 w-full bg-white h-20 border-b border-neutral-200">
+      <div className="hidden md:flex md:flex-col md:gap-1 md:items-start md:w-[400px]">
         <span className="font-bold text-lg text-neutral-800">
           Hi {user}, Welcome back!
         </span>
@@ -13,7 +13,7 @@ const TopBar = ({ user = "Guest" }: { user: string }) => {
           Experience the best features all in one place
         </p>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center justify-between gap-4 w-full max-w-[500px]">
         <form
           action=""
           method="GET"
