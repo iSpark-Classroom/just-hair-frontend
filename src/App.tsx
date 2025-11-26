@@ -1,14 +1,10 @@
 import React from "react";
-import StylistSideBar from "./components/SideBars/StylistSideBar";
-import TopBar from "./components/TopBar/TopBar";
-import AdminSideBar from "./components/SideBars/AdminSideBar";
-import ClientSideBar from "./components/SideBars/ClientSideBar";
+import BookingSummaryCard from "./components/Booking/BookingSummaryCard";
 
 const App = () => {
   return (
-    <div className="flex items-start">
-      <AdminSideBar />
-      <TopBar user={"Jason"} />
+    <div className="flex justify-center items-center p-20">
+      <BookingSummaryCard />
     </div>
   );
 };
