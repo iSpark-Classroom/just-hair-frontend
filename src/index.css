@@ -10,14 +10,43 @@ body {
   hover:bg-violet-100 hover:text-violet-700 transition duration-400 ease-in-out;
 }
 
+/* Active stylings for side bar */
 .active-tab {
   @apply bg-violet-100 text-violet-700;
 }
 
+/* Styling tab icons */
 .tab-icon {
   @apply h-5 w-5;
 }
 
+/* To hide texts on the side bar */
 .hide-text {
   display: none;
+}
+
+/* General button styling */
+.btn {
+  @apply flex gap-2 items-center justify-center font-bold py-3 px-5 rounded-md cursor-pointer transition duration-400 ease-in-out;
+}
+
+/* For hover on images */
+.img-hover {
+  transform: scale(1, 1);
+  transition: all 0.2s ease-in;
+}
+
+.img-hover:hover {
+  transform: scale(1.02, 1.02);
+}
+
+/* For hover on texts */
+.text-hover {
+  text-decoration: underline;
+  transform: scale(1, 1);
+  transition: all 0.3s ease-in;
+}
+
+.text-hover:hover {
+  transform: scale(1.15, 1.15);
 }
