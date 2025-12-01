@@ -48,11 +48,11 @@ const TopBar = ({ user = "Guest" }: { user: string }) => {
               Are you sure you want to exit?
             </p>
             <div className="flex gap-12">
-              <button className="flex gap-2 items-center justify-center w-fit bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-5 rounded-md cursor-pointer transition duration-400 ease-in-out">
+              <button className="flex gap-2 items-center justify-center w-fit text-red-700 hover:scale-[1.05] font-bold py-3 px-5 rounded-md cursor-pointer transition duration-400 ease-in-out">
                 Yes, exit
               </button>
               <button
-                className="flex gap-2 items-center justify-center w-fit text-neutral-500 hover:text-neutral-900 font-bold rounded-md cursor-pointer transition duration-400 ease-in-out"
+                className="flex gap-2 items-center justify-center w-fit text-neutral-500 hover:scale-[1.05] py-3 px-5 font-bold rounded-md cursor-pointer transition duration-400 ease-in-out"
                 onClick={() => setSignOut(false)}
               >
                 No, continue
