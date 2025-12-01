@@ -1,0 +1,56 @@
+.left-hand {
+  background-image: url(/stylist.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.left-hand::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(268, 93%, 47%, 0.87);
+  z-index: 2;
+}
+
+.left-hand-user-screen {
+  background-image: url(/images/auth/client_user.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.left-hand-user-screen::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(268, 93%, 47%, 0.87);
+  z-index: 2;
+}
+
+.right-hand-user-screen {
+  background-image: url(/images/auth/service_provider.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.right-hand-user-screen::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: hsla(0, 0%, 100%, 0.87);
+  z-index: 2;
+}

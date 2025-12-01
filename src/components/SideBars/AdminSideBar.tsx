@@ -10,7 +10,7 @@ import { FaMoneyBill } from "react-icons/fa";
 import { TiGroup } from "react-icons/ti";
 import { PiHairDryerFill } from "react-icons/pi";
 import { TiAttachmentOutline } from "react-icons/ti";
-import { TbTableAlias } from "react-icons/tb";
+import { BiSolidRename } from "react-icons/bi";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
 
@@ -100,7 +100,7 @@ const AdminSideBar = () => {
           className={`tab ${activeTab === 6 && "active-tab"}`}
           onClick={() => handleActiveTab(6)}
         >
-          <TbTableAlias className="tab-icon" />
+          <BiSolidRename className="tab-icon" />
           <p className={`${collapse && "hide-text"}`}>Hair & Services Alias</p>
         </div>
         <div
