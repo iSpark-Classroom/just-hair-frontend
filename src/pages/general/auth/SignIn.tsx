@@ -1,22 +1,73 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./SignIn.css";
 import { FaSquareWebAwesome } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-import { RiLockPasswordFill } from "react-icons/ri";
 import { RiCheckboxBlankLine } from "react-icons/ri";
 import { FaCalendarDays } from "react-icons/fa6";
 import { GrStatusGood } from "react-icons/gr";
 import { GrSecure } from "react-icons/gr";
 import { IoCheckbox } from "react-icons/io5";
+import { BiError } from "react-icons/bi";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton";
 
 const SignIn = () => {
   const [checked, setChecked] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  // Creating an object for the inputs
+  const [userCredential, setUserCredential] = useState({
+    email: "",
+    password: "",
+  });
+
+  // Creating an object for the inputs
+  const [error, setError] = useState(false);
+
+  const [errors, setErrors] = useState({
+    email: false,
+    password: false,
+  });
+
+  // Handle change on the form
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement;
+    setUserCredential({
+      ...userCredential,
+      [target.name]: target.value,
+    });
+    console.log(userCredential);
+  };
+
+  const handleSignIn = (event: React.MouseEvent) => {
+    event.preventDefault();
+
+    if (!userCredential.email) {
+      setErrors((prev) => ({ ...prev, email: true }));
+      console.log("Email cannot be empty");
+    } else {
+      setErrors((prev) => ({ ...prev, email: false }));
+    }
+
+    if (!userCredential.password) {
+      setErrors((prev) => ({ ...prev, password: true }));
+      console.log("Password cannot be empty");
+    } else {
+      setErrors((prev) => ({ ...prev, password: false }));
+    }
+
+    if (!error) {
+      console.log("Sign in successful");
+    } else {
+      console.log("Sign in unsuccessful");
+    }
+  };
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 h-dvh w-dvw">
       <div className="left-hand p-10 flex flex-col justify-center">
-        <div className=" max-w-[500px] mx-auto flex flex-col gap-32 justify-center z-100">
+        <div className=" max-w-[720px] mx-auto flex flex-col gap-32 justify-center z-100">
           <div className="flex flex-col gap-8">
             {/* Logo */}
             <div className="branding-content flex items-center gap-3">
@@ -116,8 +167,21 @@ const SignIn = () => {
                 required
                 placeholder="Enter your email"
                 className="w-full outline-none"
+                onChange={(event) => handleChange(event)}
               />
             </div>
+            {errors.email && (
+              <div className="flex gap-1 items-center text-red-800 text-[14px]">
+                <BiError className="h-4 w-4" />
+                <p className="">Please enter your email</p>
+              </div>
+            )}
+            {error && (
+              <div className="flex gap-1 items-center text-red-800 text-[14px]">
+                <BiError className="h-4 w-4" />
+                <p className="">email and password do not match</p>
+              </div>
+            )}
           </div>
 
           {/* Password Label */}
@@ -125,17 +189,40 @@ const SignIn = () => {
             <label htmlFor="" className="font-semibold text-neutral-800">
               Password
             </label>
-            <div className="flex gap-2 border py-3 px-4 items-center border-neutral-200 rounded-md bg-neutral-50 w-full  focus-within:border-violet-400">
-              <RiLockPasswordFill className="h-5 w-5 text-neutral-400" />
+            <div className="flex gap-2 border py-3 px-4 items-center justify-between border-neutral-200 rounded-md bg-neutral-50 w-full  focus-within:border-violet-400">
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 id="password"
                 required
                 placeholder="Enter your password"
                 className="w-full outline-none"
+                onChange={(event) => handleChange(event)}
               />
+              {showPassword ? (
+                <FaEyeSlash
+                  className="h-5 w-5 text-neutral-400"
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+              ) : (
+                <FaEye
+                  className="h-5 w-5 text-neutral-400"
+                  onClick={() => setShowPassword(!showPassword)}
+                />
+              )}
             </div>
+            {errors.password && (
+              <div className="flex gap-1 items-center text-red-800 text-[14px]">
+                <BiError className="h-4 w-4" />
+                <p className="">Please provide your password</p>
+              </div>
+            )}
+            {error && (
+              <div className="flex gap-1 items-center text-red-800 text-[14px]">
+                <BiError className="h-4 w-4" />
+                <p className="">email and password do not match</p>
+              </div>
+            )}
           </div>
 
           {/* Remember me & password */}
@@ -158,7 +245,10 @@ const SignIn = () => {
               Forgot Password?
             </a>
           </div>
-          <div className="w-full max-w-[500px]">
+          <div
+            className="w-full max-w-[500px]"
+            onClick={(event) => handleSignIn(event)}
+          >
             <PrimaryButton label="Sign in" />
           </div>
 

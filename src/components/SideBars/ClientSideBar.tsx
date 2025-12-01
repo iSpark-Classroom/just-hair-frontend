@@ -1,5 +1,5 @@
 // Importing necessary libraries and icons
-import React, { useState } from "react";
+import { useState } from "react";
 import { GiHairStrands } from "react-icons/gi";
 import { FaSquareWebAwesome } from "react-icons/fa6";
 import { MdSpaceDashboard } from "react-icons/md";
