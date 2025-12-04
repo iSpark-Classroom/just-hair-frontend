@@ -41,13 +41,13 @@ body {
 
 /* Side Bar styles */
 .tab {
-  @apply cursor-pointer w-full text-sm text-neutral-500 flex items-center gap-3 p-3 rounded-md font-medium
-  hover:bg-violet-100 hover:text-violet-700 transition duration-400 ease-in-out;
+  @apply cursor-pointer w-full text-sm text-neutral-500 flex items-center gap-3 p-3 font-medium
+  border-l-4 border-transparent rounded-sm hover:border-violet-700 hover:text-violet-700 transition duration-400 ease-in-out;
 }
 
 /* Active stylings for side bar */
 .active-tab {
-  @apply bg-violet-100 text-violet-700;
+  @apply border-violet-700 text-violet-700;
 }
 
 /* Styling tab icons */
