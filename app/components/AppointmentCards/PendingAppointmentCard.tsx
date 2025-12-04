@@ -38,7 +38,7 @@ const PendingAppointmentCard = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 items-end">
         <span className="font-bold text-neutral-700 text-base cursor-pointer underline decoration-solid hover:text-sky-700">
           View
         </span>
