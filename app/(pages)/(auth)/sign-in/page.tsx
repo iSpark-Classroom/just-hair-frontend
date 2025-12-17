@@ -250,12 +250,12 @@ const SignIn = () => {
               )}
               <p>Remember me</p>
             </div>
-            <a
-              href=""
+            <Link
+              href={"/forgot-password"}
               className="font-semibold text-violet-500 hover:text-violet-700"
             >
               Forgot Password?
-            </a>
+            </Link>
           </div>
           <Link
             href="/user/dashboard"

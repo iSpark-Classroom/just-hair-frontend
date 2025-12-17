@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import "./TopBar.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoPower } from "react-icons/io5";
-import profile from "../../../public/profile.jpg";
+import profile from "@/public/profile.jpg";
 import Image from "next/image";
 import Link from "next/link";
 

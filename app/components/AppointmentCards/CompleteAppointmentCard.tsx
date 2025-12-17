@@ -12,7 +12,7 @@ const CompleteAppointmentCard = () => {
           <p className="text-sm text-neutral-500">AM</p>
         </div>
         <div className="flex flex-col gap-1">
-          <div className="flex gap-1">
+          <div className="flex gap-3 items-center">
             <Image
               src={profile}
               alt=""

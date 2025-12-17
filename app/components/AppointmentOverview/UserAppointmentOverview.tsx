@@ -2,6 +2,7 @@ import React from "react";
 import { SiTicktick } from "react-icons/si";
 import { GrMoney } from "react-icons/gr";
 import { MdRateReview } from "react-icons/md";
+import { BsCalendar2Date } from "react-icons/bs";
 
 const UserAppointmentOverview = () => {
   return (
@@ -10,7 +11,7 @@ const UserAppointmentOverview = () => {
         Appointment Overview
       </h3>
       {/* Stats */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-8">
         {/* Expense Stats */}
         <div className="flex gap-4 items-center">
           <div className="p-3 rounded-md bg-blue-100">
@@ -38,7 +39,7 @@ const UserAppointmentOverview = () => {
         {/* Pending appointments Stats */}
         <div className="flex gap-4 items-center">
           <div className="p-3 rounded-md bg-amber-100">
-            <GrMoney className="h-5 w-5 text-amber-700" />
+            <BsCalendar2Date className="h-5 w-5 text-amber-700" />
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-xl text-neutral-800">3</span>

@@ -12,7 +12,7 @@ const PendingAppointmentCard = () => {
           <p className="text-sm text-neutral-500">AM</p>
         </div>
         <div className="flex flex-col gap-1">
-          <div className="flex gap-1">
+          <div className="flex gap-3 items-center">
             <Image
               src={profile}
               alt=""
@@ -42,7 +42,7 @@ const PendingAppointmentCard = () => {
         <span className="font-bold text-neutral-700 text-base cursor-pointer underline decoration-solid hover:text-sky-700">
           View
         </span>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col md:flex-row gap-4 text-right md:text-left">
           <p className="text-sm font-medium text-neutral-700 cursor-pointer transition duration-300 ease-in hover:text-sky-700">
             Reschedule
           </p>

@@ -2,16 +2,27 @@
 
 import React, { useState } from "react";
 import profile_image from "@/public/profile.jpg";
-import { MdPhotoCamera } from "react-icons/md";
+import { MdAdd, MdPhotoCamera } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import TertiaryButton from "../../../components/Buttons/TertiaryButton";
 import Image from "next/image";
+import PortfolioImage from "@/app/components/photos/PortfolioImage";
 
 const ClientUserProfile = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [deleteAccount, setDeleteAccount] = useState(false);
+
+  const gallery = [
+    { id: 1, src: "/images/hairstyles/1.jpg" },
+    { id: 2, src: "/images/hairstyles/2.jpg" },
+    { id: 3, src: "/images/hairstyles/3.jpg" },
+    { id: 4, src: "/images/hairstyles/4.jpg" },
+    { id: 5, src: "/images/hairstyles/2.jpg" },
+    { id: 6, src: "/images/hairstyles/3.jpg" },
+    { id: 7, src: "/images/hairstyles/4.jpg" },
+  ];
 
   return (
     <>
@@ -151,8 +162,28 @@ const ClientUserProfile = () => {
             </div>
           </div>
 
-          {/* Telephone, Email and Password */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-start w-full">
+          {/* Business Type and Password */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start w-full">
+            {/* Business Type */}
+            <div className="flex flex-col gap-1 w-full">
+              <label
+                htmlFor="business"
+                className="font-semibold text-neutral-700"
+              >
+                Business
+              </label>
+
+              <select
+                name="business"
+                id="business"
+                className="outline-none px-3 py-2 border border-neutral-200 rounded-md focus:border-violet-300"
+                disabled
+              >
+                <option value="Hair Dresser">Hair Dresser</option>
+                <option value="Barber">Barber</option>
+              </select>
+            </div>
+
             {/* Telephone */}
             <div className="flex flex-col gap-1 w-full">
               <label
@@ -170,7 +201,10 @@ const ClientUserProfile = () => {
                 disabled
               />
             </div>
+          </div>
 
+          {/* Email and Password */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start w-full">
             {/* Email */}
             <div className="flex flex-col gap-1 w-full">
               <label htmlFor="email" className="font-semibold text-neutral-700">
@@ -216,6 +250,52 @@ const ClientUserProfile = () => {
               </div>
             </div>
           </div>
+
+          {/* About */}
+          <div className="flex flex-col gap-1 w-full">
+            <label htmlFor="about" className="font-semibold text-neutral-700">
+              About Your Business
+            </label>
+            <textarea
+              name="about"
+              id=""
+              rows={5}
+              value="I am a professional hair stylist with over 10 years of experience in the industry. I specialize in creating unique and personalized hairstyles for my clients, ensuring they leave my salon feeling confident and beautiful. My passion for hair care and styling drives me to stay updated with the latest trends and techniques. I believe that every client deserves to look and feel their best, and I am dedicated to providing exceptional service and results. Whether you're looking for a classic cut or a bold new look, I am here to help you achieve your hair goals."
+              className="resize-none outline-none px-3 py-2 border border-neutral-200 rounded-md focus:border-violet-300"
+              disabled
+            ></textarea>
+          </div>
+
+          {/* Portfolio Image */}
+          <div className="flex flex-col gap-1 w-full">
+            <span className="font-semibold text-neutral-700">
+              Portfolio Images
+            </span>
+            <div className="flex flex-wrap gap-4 py-2">
+              {/* Images */}
+              {gallery.map((photo) => (
+                <div key={photo.id}>
+                  <PortfolioImage src={photo.src} />
+                </div>
+              ))}
+
+              {/* Add new */}
+              <div className="border-2 border-dashed border-neutral-200 rounded-xl h-50 w-50 flex flex-col justify-center items-center relative">
+                <div className="text-neutral-400 h-20 flex gap-2 mt-10">
+                  <MdAdd className="h-6 w-6" />
+                  <p>Add an image</p>
+                </div>
+
+                <input
+                  type="file"
+                  name="profile-photo"
+                  id=""
+                  className="opacity-0 w-full h-full absolute top-0 left-0 z-5"
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="py-4 flex justify-end">
             <TertiaryButton label="Update" />
           </div>
