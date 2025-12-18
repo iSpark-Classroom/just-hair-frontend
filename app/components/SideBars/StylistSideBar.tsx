@@ -10,7 +10,7 @@ import { MdRateReview } from "react-icons/md";
 import { PiConfettiFill } from "react-icons/pi";
 import { FaUserEdit } from "react-icons/fa";
 import { IoNotifications } from "react-icons/io5";
-import { PiOfficeChairFill } from "react-icons/pi";
+import { PiOfficeChairFill, PiHairDryerFill } from "react-icons/pi";
 import { FaMoneyBill } from "react-icons/fa";
 import { FaChevronRight } from "react-icons/fa";
 import { FaChevronLeft } from "react-icons/fa";
@@ -87,6 +87,22 @@ const StylistSideBar = () => {
           <p className={`${collapse && "hide-text"}`}>Appointments</p>
         </Link>
         <Link
+          href={"/service-provider/services"}
+          className={`tab ${activeTab === 6 && "active-tab"}`}
+          onClick={() => handleActiveTab(6)}
+        >
+          <PiOfficeChairFill className="tab-icon" />
+          <p className={`${collapse && "hide-text"}`}>Services</p>
+        </Link>
+        <Link
+          href={"/service-provider/hairstyles"}
+          className={`tab ${activeTab === 7 && "active-tab"}`}
+          onClick={() => handleActiveTab(7)}
+        >
+          <PiHairDryerFill className="tab-icon" />
+          <p className={`${collapse && "hide-text"}`}>Hairstyles</p>
+        </Link>
+        <Link
           href={"/service-provider/reviews"}
           className={`tab ${activeTab === 4 && "active-tab"}`}
           onClick={() => handleActiveTab(4)}
@@ -102,34 +118,27 @@ const StylistSideBar = () => {
           <PiConfettiFill className="tab-icon" />
           <p className={`${collapse && "hide-text"}`}>Rewards</p>
         </Link>
-        <Link
-          href={"/service-provider/services-and-hairstyles"}
-          className={`tab ${activeTab === 6 && "active-tab"}`}
-          onClick={() => handleActiveTab(6)}
-        >
-          <PiOfficeChairFill className="tab-icon" />
-          <p className={`${collapse && "hide-text"}`}>Services & Hairstyles</p>
-        </Link>
+
         <Link
           href={"/service-provider/revenue"}
-          className={`tab ${activeTab === 7 && "active-tab"}`}
-          onClick={() => handleActiveTab(7)}
+          className={`tab ${activeTab === 8 && "active-tab"}`}
+          onClick={() => handleActiveTab(8)}
         >
           <FaMoneyBill className="tab-icon" />
           <p className={`${collapse && "hide-text"}`}>Revenue</p>
         </Link>
         <Link
           href={"/service-provider/user-profile"}
-          className={`tab ${activeTab === 8 && "active-tab"}`}
-          onClick={() => handleActiveTab(8)}
+          className={`tab ${activeTab === 9 && "active-tab"}`}
+          onClick={() => handleActiveTab(9)}
         >
           <FaUserEdit className="tab-icon" />
           <p className={`${collapse && "hide-text"}`}>Profile</p>
         </Link>
         <Link
           href={"/service-provider/notifications"}
-          className={`tab ${activeTab === 9 && "active-tab"}`}
-          onClick={() => handleActiveTab(9)}
+          className={`tab ${activeTab === 10 && "active-tab"}`}
+          onClick={() => handleActiveTab(10)}
         >
           <IoNotifications className="tab-icon" />
           <p className={`${collapse && "hide-text"}`}>Notifications</p>

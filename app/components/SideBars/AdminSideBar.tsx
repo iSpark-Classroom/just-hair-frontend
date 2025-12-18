@@ -97,12 +97,12 @@ const AdminSideBar = () => {
         </Link>
 
         <Link
-          href="/admin/hair-styles"
+          href="/admin/hairstyles"
           className={`tab ${activeTab === 5 && "active-tab"}`}
           onClick={() => handleActiveTab(5)}
         >
           <PiHairDryerFill className="tab-icon" />
-          <p className={`${collapse && "hide-text"}`}>Hair Styles</p>
+          <p className={`${collapse && "hide-text"}`}>Hairstyles</p>
         </Link>
         <Link
           href="/admin/hair-attachments"

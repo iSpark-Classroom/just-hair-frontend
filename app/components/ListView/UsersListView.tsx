@@ -18,7 +18,7 @@ const UsersListView = () => {
           className="rounded-full h-10 w-10 object-cover ring ring-neutral-200"
         />
         <p className="text-neutral-600 w-50">Bennette</p>
-        <p className="text-neutral-600 w-80">Elizabeth</p>
+        <p className="text-neutral-600 w-80">Elizabeth Stone</p>
         <p className="text-neutral-600 w-80">Bonduma, Buea</p>
         <p className="text-neutral-600 w-40">abc@xyz.com</p>
         <p className="text-neutral-600 w-32">12345678</p>
